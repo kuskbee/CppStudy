@@ -35,14 +35,16 @@ void ShuffleNums(int Numbers[LOTTO_NUMS])
 
 void ChooseNums(int LottoNums[LOTTO_NUMS], int ChooseNums[CHOOSE_NUMS])
 {
-	for (int i = 0; i < CHOOSE_NUMS; i++) {
+	for (int i = 0; i < CHOOSE_NUMS; i++)
+	{
 		ChooseNums[i] = LottoNums[i];
 	}
 }
 
-void printNumbers(int Numbers[CHOOSE_NUMS])
+void PrintNumbers(int Numbers[CHOOSE_NUMS])
 {
-	for (int i = 0; i < CHOOSE_NUMS; i++) {
+	for (int i = 0; i < CHOOSE_NUMS; i++)
+	{
 		cout << Numbers[i] << " ";
 	}
 }
@@ -56,7 +58,7 @@ int main()
 	InitializeLottoNum(LottoNumbers);
 	ShuffleNums(LottoNumbers);
 	ChooseNums(LottoNumbers, ChooseNumbers);
-	printNumbers(ChooseNumbers);
+	PrintNumbers(ChooseNumbers);
 
 	return 0;
 }
