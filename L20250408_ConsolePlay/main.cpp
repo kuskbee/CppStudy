@@ -23,7 +23,66 @@ struct ScreenInfo
 {
 	int ScreenSizeX;
 	int ScreenSizeY;
+	bool isEscape = false;
 };
+
+bool KeyProcess(PlayerInfo* PlayerData, ScreenInfo* ScreenData)
+{
+	if (_kbhit())
+	{
+		int key = _getch();
+		switch (key)
+		{
+		case 'w':
+		case 'W':
+		case 0x48:
+			if (PlayerData->Y > 0)
+			{
+				PlayerData->Y--;
+			}
+			break;
+		case 's':
+		case 'S':
+		case 0x50:
+			if (PlayerData->Y < ScreenData->ScreenSizeX)
+			{
+				PlayerData->Y++;
+			}
+			break;
+		case 'a':
+		case 'A':
+		case 0x4B:
+			if (PlayerData->X > 0)
+			{
+				PlayerData->X--;
+			}
+			break;
+		case 'd':
+		case 'D':
+		case 0x4D:
+			if (PlayerData->X < ScreenData->ScreenSizeX)
+			{
+				PlayerData->X++;
+			}
+			break;
+		case 'q':
+		case 0x1B:
+			ScreenData->isEscape = true;
+			break;
+		}
+		return true;
+	}
+	//char Input = (char)_getch();
+
+	return false;
+}
+
+void DrawScreen(PlayerInfo* PlayerData)
+{
+	system("cls");
+	GotoXY(PlayerData->X, PlayerData->Y);
+	cout << PlayerData->Shape << "(" << PlayerData->X << ", " << PlayerData->Y << ")" << endl;
+}
 
 int main()
 {
@@ -36,50 +95,18 @@ int main()
 	PlayerData->Y = 0;
 	PlayerData->Shape = "P";
 
-	char Input = 0;
 	do
 	{
-		Input = (char)_getch();
-				
-		switch (Input)
-		{
-		case 'w' :
-		case 'W' :
-			if (PlayerData->Y > 0)
-			{
-				PlayerData->Y--;
-			}
-			break;
-		case 's' :
-		case 'S' :
-			if (PlayerData->Y < ScreenData->ScreenSizeX)
-			{
-				PlayerData->Y++;
-			}
-			break;
-		case 'a' :
-		case 'A' :
-			if (PlayerData->X > 0)
-			{
-				PlayerData->X--;
-			}
-			break;
-		case 'd':
-		case 'D':
-			if (PlayerData->X < ScreenData->ScreenSizeX)
-			{
-				PlayerData->X++;
-			}
-			break;
-		case 'q':
-			return 0;
+		bool isDraw = KeyProcess(PlayerData, ScreenData);
+
+		if (ScreenData->isEscape) {
 			break;
 		}
-		system("cls");
 
-		GotoXY(PlayerData->X, PlayerData->Y);
-		cout << PlayerData->Shape << "(" << PlayerData->X << ", " << PlayerData->Y << ")" << endl;
-
+		if (isDraw)
+		{
+			DrawScreen(PlayerData);
+		}
 	} while (true);
 	
 	delete PlayerData;
@@ -88,3 +115,5 @@ int main()
 	delete ScreenData;
 	ScreenData = nullptr;
 }
+
+
