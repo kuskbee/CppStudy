@@ -17,17 +17,19 @@ int main()
 	ArraySize = ResizeArray(&DynamicArray, ArraySize);
 
 	// DynamicArray[20] 로 할당, -> 10-19 idx는 -> 4배 넣기
-	for (int i = 10; i < ArraySize; i++)
+	int FirstIdx = 10;
+	for (int i = FirstIdx; i < ArraySize; i++)
 	{
-		DynamicArray[i] = (i + 1) * 4;
+		DynamicArray[i] = (i - (FirstIdx - 1)) * 4;
 	}
 
 	ArraySize = ResizeArray(&DynamicArray, ArraySize);
 
 	// DynamicArray[20] 로 할당, -> 20-39 idx는 -> 5배 넣기
-	for (int i = 20; i < ArraySize; i++)
+	FirstIdx = 20;
+	for (int i = FirstIdx; i < ArraySize; i++)
 	{
-		DynamicArray[i] = (i + 1) * 5;
+		DynamicArray[i] = (i - (FirstIdx - 1)) * 5;
 	}
 
 	for (int i = 0; i < ArraySize; i++)
