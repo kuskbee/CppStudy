@@ -34,6 +34,9 @@ int main()
 	{
 		cout << DynamicArray[i] << endl;
 	}
+
+	delete[] DynamicArray;
+	DynamicArray = nullptr;
 }
 
 int ResizeArray(int** DynamicArray, int ArraySize)
