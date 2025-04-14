@@ -73,6 +73,7 @@ int main()
 			Render(Grid);
 		}
 
+		//(GameMode)
 		IsGoalResult = IsGoal(&Player, &Goal);
 		if (IsGoalResult)
 		{
