@@ -99,7 +99,8 @@ int main()
 	{
 		bool isDraw = KeyProcess(PlayerData, ScreenData);
 
-		if (ScreenData->isEscape) {
+		if (ScreenData->isEscape)
+		{
 			break;
 		}
 
