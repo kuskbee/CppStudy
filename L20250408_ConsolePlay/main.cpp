@@ -12,7 +12,7 @@ void GotoXY(int X, int Y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Cur);
 }
 
-struct PlayerInfo
+struct CharacterInfo
 {
 	int X;
 	int Y;
@@ -26,7 +26,7 @@ struct ScreenInfo
 	bool isEscape = false;
 };
 
-bool KeyProcess(PlayerInfo* PlayerData, ScreenInfo* ScreenData)
+bool KeyProcess(CharacterInfo* PlayerData, ScreenInfo* ScreenData)
 {
 	if (_kbhit())
 	{
@@ -77,7 +77,7 @@ bool KeyProcess(PlayerInfo* PlayerData, ScreenInfo* ScreenData)
 	return false;
 }
 
-void DrawScreen(PlayerInfo* PlayerData)
+void DrawScreen(CharacterInfo* PlayerData)
 {
 	system("cls");
 	GotoXY(PlayerData->X, PlayerData->Y);
@@ -90,7 +90,7 @@ int main()
 	ScreenData->ScreenSizeX = 100;
 	ScreenData->ScreenSizeY = 30;
 
-	PlayerInfo* PlayerData = new PlayerInfo();
+	CharacterInfo* PlayerData = new CharacterInfo();
 	PlayerData->X = 0;
 	PlayerData->Y = 0;
 	PlayerData->Shape = "P";
