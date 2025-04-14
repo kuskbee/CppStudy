@@ -7,29 +7,36 @@
 
 using namespace std;
 
-struct PlayerCoord
+struct Point
 {
-	int X = 5;
-	int Y = 5;
+	int X = 0;
+	int Y = 0;
 };
 
-void Initialize(char* Grid, PlayerCoord* Player);
-bool Input(bool& IsRunning, char* Grid, PlayerCoord* Player);
-void Tick(char* Grid, PlayerCoord* Player);
+struct PlayerInfo
+{
+	Point Location = { 5, 5 };
+};
+
+void Initialize(char* Grid, PlayerInfo* Player);
+bool Input(bool& IsRunning, char* Grid, Point* XY);
+void Tick(char* Grid, Point* XY, PlayerInfo* Player);
 void Render(char* Grid);
 
 int main()
 {
 	bool IsRunning = true;
 	char* Grid = new char[GRIDARRAY_LENGTH];
-	PlayerCoord Player;
+	PlayerInfo Player;
 	Initialize(Grid, &Player);
 
+	
 	bool IsFirst = true;
 	while (IsRunning)
 	{
-		bool Result = Input(IsRunning, Grid, &Player);
-		Tick(Grid, &Player);
+		Point XY;
+		bool Result = Input(IsRunning, Grid, &XY);
+		Tick(Grid, &XY, &Player);
 		if (Result || IsFirst)
 		{
 			IsFirst = false;
@@ -41,7 +48,7 @@ int main()
 	return 0;
 }
 
-void Initialize(char* Grid, PlayerCoord* Player)
+void Initialize(char* Grid, PlayerInfo* Player)
 {
 	for (int y = 0; y < GRIDSIZE_Y; y++)
 	{
@@ -58,7 +65,7 @@ void Initialize(char* Grid, PlayerCoord* Player)
 			{
 				Grid[Index] = '*';
 			}
-			else if (y == Player->Y && x == Player->X)
+			else if (y == Player->Location.Y && x == Player->Location.X)
 			{
 				Grid[Index] = 'P';
 			}
@@ -69,7 +76,7 @@ void Initialize(char* Grid, PlayerCoord* Player)
 	}
 }
 
-bool Input(bool& IsRunning, char* Grid, PlayerCoord* Player)
+bool Input(bool& IsRunning, char* Grid, Point* XY)
 {
 	int x = 0;
 	int y = 0;
@@ -93,26 +100,8 @@ bool Input(bool& IsRunning, char* Grid, PlayerCoord* Player)
 			break;
 		}
 
-		int OldX = Player->X;
-		int OldY = Player->Y;
-
-		int NewX = Player->X + x;
-		int NewY = Player->Y + y;
-
-
-		if (NewX > 0 && NewX < GRIDSIZE_X-1 && NewY > 0 && NewY < GRIDSIZE_Y - 1)
-		{
-			int Index = NewY * GRIDSIZE_X + NewX;
-			// Is not Wall?
-			if (Grid[Index] != '*')
-			{
-				Player->X = NewX;
-				Player->Y = NewY;
-			}
-		}
-		
-		Grid[OldY * GRIDSIZE_X + OldX] = ' ';
-		Grid[Player->Y * GRIDSIZE_X + Player->X] = 'P';
+		XY->X = x;
+		XY->Y = y;
 		system("cls");
 		return true;
 	}
@@ -120,9 +109,28 @@ bool Input(bool& IsRunning, char* Grid, PlayerCoord* Player)
 	return false;
 }
 
-void Tick(char* Grid, PlayerCoord* Player)
+void Tick(char* Grid, Point* XY, PlayerInfo* Player)
 {
-	//...
+	int OldX = Player->Location.X;
+	int OldY = Player->Location.Y;
+
+	int NewX = Player->Location.X + XY->X;
+	int NewY = Player->Location.Y + XY->Y;
+
+
+	if (NewX > 0 && NewX < GRIDSIZE_X - 1 && NewY > 0 && NewY < GRIDSIZE_Y - 1)
+	{
+		int Index = NewY * GRIDSIZE_X + NewX;
+		// Is not Wall?
+		if (Grid[Index] != '*')
+		{
+			Player->Location.X = NewX;
+			Player->Location.Y = NewY;
+		}
+	}
+
+	Grid[OldY * GRIDSIZE_X + OldX] = ' ';
+	Grid[Player->Location.Y * GRIDSIZE_X + Player->Location.X] = 'P';
 }
 
 void Render(char* Grid)
