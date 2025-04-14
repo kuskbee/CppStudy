@@ -80,9 +80,11 @@ bool Input(bool& IsRunning, char* Grid, Point* XY)
 {
 	int x = 0;
 	int y = 0;
-	if (_kbhit()) {
+	if (_kbhit())
+	{
 		char InputChar = _getch();
-		switch (InputChar) {
+		switch (InputChar)
+		{
 		case 'w' :
 			y--;
 			break;
@@ -135,11 +137,14 @@ void Tick(char* Grid, Point* XY, PlayerInfo* Player)
 
 void Render(char* Grid)
 {
-	for (int i = 0; i < GRIDARRAY_LENGTH; i++) {
+	for (int i = 0; i < GRIDARRAY_LENGTH; i++)
+	{
 		
 		cout << Grid[i];
 
 		if (i % 10 == 9)
+		{
 			cout << endl;
+		}
 	}
 }
