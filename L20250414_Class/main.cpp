@@ -1,15 +1,15 @@
 #include <iostream>
 #include <string>
-#include "World.h"
+//#include "World.h"
+#include "FindingPath.h"
 
 using namespace std;
 
 int main()
 {
-	APlayer* Player = new APlayer;
-
-	delete Player;
-	Player = nullptr;
+	CFindingPath Path;
+	Path.StartFindingPath();
+	Path.PrintGrid();
 
 	return 0;
 }

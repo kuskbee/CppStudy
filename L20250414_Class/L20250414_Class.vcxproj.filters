@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="AStarAlgorithm">
+      <UniqueIdentifier>{41278b00-42de-4b60-8b7b-7ff0c625bc71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +39,12 @@
     <ClCompile Include="Monster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FindingPath.cpp">
+      <Filter>AStarAlgorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>AStarAlgorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -56,8 +65,14 @@
     <ClInclude Include="Monster.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="Grid.h">
+      <Filter>AStarAlgorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="FindingPath.h">
+      <Filter>AStarAlgorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>AStarAlgorithm</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
