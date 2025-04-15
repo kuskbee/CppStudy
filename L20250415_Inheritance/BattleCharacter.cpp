@@ -5,7 +5,7 @@ void ABattleCharacter::Attack(ABattleCharacter* Target)
 	std::cout << "캐릭터 공격" << std::endl;
 
 	int AtkPoint = Target->Status.GetAttackPoint();
-	Damage(Target->Status.GetAttackPoint());
+	Damage(AtkPoint);
 	if (Target->IsDead())
 	{
 		_int64 DropGold = Target->Drop();
