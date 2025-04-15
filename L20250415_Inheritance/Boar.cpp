@@ -6,6 +6,7 @@ ABoar::ABoar()
 	Status.SetHP(10000);
 	Status.SetMP(10000);
 	Status.SetGold(5000000);
+	Status.SetAttackPoint(50);
 }
 
 void ABoar::Rush()
