@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "Actor.h"
 #include "StatusComponent.h"
 class ABattleCharacter : public AActor
@@ -12,6 +13,7 @@ protected:
 	virtual void Die();
 	virtual _int64 Drop();
 
+	std::string Name;
 	UStatusComponent Status;
 };
 

@@ -7,10 +7,5 @@ APlayer::APlayer()
 	Status.SetMP(100);
 	Status.SetGold(1000000000);
 	Status.SetAttackPoint(300);
-}
-
-void APlayer::Attack(ABattleCharacter* Target)
-{
-	std::cout << "플레이어 ";
-	ABattleCharacter::Attack(Target);
+	Name = "<플레이어>";
 }

@@ -5,5 +5,7 @@ class AGoblin : public AMonster
 public:
 	AGoblin();
 	void Run();
+public:
+	static int GoblinCnt;
 };
 

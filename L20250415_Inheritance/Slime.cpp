@@ -1,15 +1,17 @@
 #include "Slime.h"
 #include <iostream>
 
+int ASlime::SlimeCnt = 0;
 ASlime::ASlime()
 {
 	Status.SetHP(10);
 	Status.SetMP(10);
 	Status.SetGold(10);
 	Status.SetAttackPoint(5);
+	Name = "<½½¶óÀÓ " + std::to_string(SlimeCnt++) + ">";
 }
 
 void ASlime::Slide()
 {
-	std::cout << "¹Ì²ôµ¢" << std::endl;
+	std::cout << Name << " ½½¶óÀÌµå" << std::endl;
 }
