@@ -1,9 +1,8 @@
 #pragma once
-class AFloor
+#include "Actor.h"
+
+class AFloor : public AActor
 {
-public:
-	int X;
-	int Y;
-	char Shape;
+
 };
 

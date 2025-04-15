@@ -1,9 +1,7 @@
 #pragma once
-class AWall
+#include "Actor.h"
+class AWall : public AActor
 {
-public:
-	int X;
-	int Y;
-	char Shape;
+
 };
 
