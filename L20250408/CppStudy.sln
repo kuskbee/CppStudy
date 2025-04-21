@@ -16,6 +16,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L20250415_Inheritance", "..
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L20250421_", "..\L20250421_\L20250421_.vcxproj", "{9BECD039-E4A5-4C74-A9A5-D1F7A5F8CC1B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L20250421_MovingPlayerOOP", "..\L20250421_MovingPlayerOOP\L20250421_MovingPlayerOOP.vcxproj", "{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -80,6 +82,14 @@ Global
 		{9BECD039-E4A5-4C74-A9A5-D1F7A5F8CC1B}.Release|x64.Build.0 = Release|x64
 		{9BECD039-E4A5-4C74-A9A5-D1F7A5F8CC1B}.Release|x86.ActiveCfg = Release|Win32
 		{9BECD039-E4A5-4C74-A9A5-D1F7A5F8CC1B}.Release|x86.Build.0 = Release|Win32
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Debug|x64.ActiveCfg = Debug|x64
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Debug|x64.Build.0 = Debug|x64
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Debug|x86.ActiveCfg = Debug|Win32
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Debug|x86.Build.0 = Debug|Win32
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Release|x64.ActiveCfg = Release|x64
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Release|x64.Build.0 = Release|x64
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Release|x86.ActiveCfg = Release|Win32
+		{5AB40864-BDC4-4D2F-B3E2-CAF06FA6073B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
