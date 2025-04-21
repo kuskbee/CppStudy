@@ -1,14 +1,10 @@
 #pragma once
+#include "Actor.h"
 
-class Floor
+class AFloor : public AActor
 {
 public:
-	Floor() : SizeX(10), SizeY(10), Length(100) {}
-	Floor(int SizeX, int SizeY) : SizeX(SizeX), SizeY(SizeY), Length(SizeX* SizeY) {}
-
-private:
-	int SizeX;
-	int SizeY;
-	int Length;
+	AFloor();
+	virtual ~AFloor();
 };
 

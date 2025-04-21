@@ -28,3 +28,8 @@ void AActor::Render()
 	GotoXY(Location.X, Location.Y);
 	std::cout << Shape << std::endl;
 }
+
+void AActor::SetActorPosition(FVector2D& Pos)
+{
+	Location = Pos;
+}

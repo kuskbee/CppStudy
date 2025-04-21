@@ -1,10 +1,6 @@
 #pragma once
 
-struct Point
-{
-	int X = 0;
-	int Y = 0;
-};
+#include "Vector2D.h"
 
 class AActor
 {
@@ -14,8 +10,11 @@ public:
 
 	virtual void Tick();
 	virtual void Render();
-	
-	Point Location;
+
+	void AddActorOffset(FVector2D Delta);
+	void SetActorPosition(FVector2D& Pos);
+protected:
+	FVector2D Location;
 	char Shape;
 };
 

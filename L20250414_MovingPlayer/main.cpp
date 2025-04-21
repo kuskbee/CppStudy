@@ -8,7 +8,7 @@
 
 using namespace std;
 
-struct Point
+struct FVector2
 {
 	int X = 0;
 	int Y = 0;
@@ -22,18 +22,18 @@ struct InputInfo
 
 struct CharacterInfo
 {
-	Point Location = { 5, 5 };
+	FVector2 Location = { 5, 5 };
 	char Shape = 'P';
 };
 
-void Initialize(char* Grid, CharacterInfo* Player, CharacterInfo* Monster, Point* Goal);
+void Initialize(char* Grid, CharacterInfo* Player, CharacterInfo* Monster, FVector2* Goal);
 void Input(InputInfo* InputData);
 bool Tick(bool& IsRunning, char* Grid, InputInfo* InputData, CharacterInfo* Player, CharacterInfo* Monster);
 void Render(char* Grid);
 void Terminate(char* Grid);
 bool Predict(int X, int Y, CharacterInfo* Other, char* Grid);
 
-bool IsGoal(CharacterInfo* Player, Point* Goal)
+bool IsGoal(CharacterInfo* Player, FVector2* Goal)
 {
 	if (Player->Location.X == Goal->X && Player->Location.Y == Goal->Y)
 	{
@@ -57,7 +57,7 @@ int main()
 
 	CharacterInfo Player;
 	CharacterInfo Monster;
-	Point Goal = { 8, 8 };
+	FVector2 Goal = { 8, 8 };
 	Initialize(Grid, &Player, &Monster, &Goal);
 
 	bool IsFirst = true;
@@ -87,7 +87,7 @@ int main()
 	return 0;
 }
 
-void Initialize(char* Grid, CharacterInfo* Player, CharacterInfo* Monster, Point* Goal)
+void Initialize(char* Grid, CharacterInfo* Player, CharacterInfo* Monster, FVector2* Goal)
 {
 	// Monster ÃÊ±âÈ­
 	srand((unsigned int)time(NULL));
@@ -151,7 +151,7 @@ bool Tick(bool& IsRunning, char* Grid, InputInfo* InputData, CharacterInfo* Play
 
 	// New Player Location
 	{
-		Point XY;
+		FVector2 XY;
 		switch (InputData->KeyCode)
 		{
 		case 'w':
@@ -195,7 +195,7 @@ bool Tick(bool& IsRunning, char* Grid, InputInfo* InputData, CharacterInfo* Play
 
 	// New Monster Location
 	{
-		Point XY;
+		FVector2 XY;
 		srand((unsigned int)time(NULL));
 		int Direction = rand() % 4;
 		switch (Direction)
