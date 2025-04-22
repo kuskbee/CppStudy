@@ -12,5 +12,7 @@ public:
 
 	void AddActorWorldOffset(FVector2D Offset);
 	FVector2D Location;
+
+	char Shape;
 };
 

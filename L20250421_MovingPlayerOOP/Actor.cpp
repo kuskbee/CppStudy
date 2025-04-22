@@ -5,10 +5,8 @@
 
 void GotoXY(int X, int Y)
 {
-	COORD Cur;
-	Cur.X = X;
-	Cur.Y = Y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Cur);
+	COORD Position = { X, Y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Position);
 }
 
 AActor::AActor()
