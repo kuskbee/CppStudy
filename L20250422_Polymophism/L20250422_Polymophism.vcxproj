@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5ab40864-bdc4-4d2f-b3e2-caf06fa6073b}</ProjectGuid>
-    <RootNamespace>L20250421MovingPlayerOOP</RootNamespace>
+    <ProjectGuid>{f2459d07-979d-4dce-b2df-1c5ab5d645c9}</ProjectGuid>
+    <RootNamespace>L20250422Polymophism</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,28 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="Floor.cpp" />
-    <ClCompile Include="Goal.cpp" />
+    <ClCompile Include="Bow.cpp" />
+    <ClCompile Include="Excalibur.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
-    <ClCompile Include="Wall.cpp" />
-    <ClCompile Include="World.cpp" />
+    <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actor.h" />
-    <ClInclude Include="Floor.h" />
-    <ClInclude Include="Goal.h" />
-    <ClInclude Include="Monster.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Vector2D.h" />
-    <ClInclude Include="Wall.h" />
-    <ClInclude Include="World.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="Bow.h" />
+    <ClInclude Include="Excalibur.h" />
+    <ClInclude Include="Sword.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
